@@ -1,0 +1,33 @@
+graph_id,x_label,mean_x,y_label,mean_y,title_slant,title_neutral,relationship
+1,Year (2007 to 2018),2012.5,"Avergae house price (£) (150,000 to 230,000)",190000,Increase in house prices since the last recession,How house prices have changed since the last recession,Positive
+2,Year (2011 to 2019),2015,"Offences involving knife/sharp instrument (25,000 to 45,000)",35000,Rise in knife crime in England and Wales,Total knife offences in England and Wales,Positive
+3,Year (1999 to 2016),2007.5,Number of sentences over 6 months long (%) (20 to 40),30,Tougher sentences for knife crime are increasing,How many immediate custodial sentences over 6 months there are for knife offences ,Positive
+4,Number of years of experience (0 to 10),5,"Average salary (£) (£25,000 to £75,000)",50000,The amount of experience in your job field matters,How experience in a job field relates to income,Positive
+5,Year (1950 to 2050),2000,Life expectency (years) (48 to 77),62.5,"Global life expectancy has continously risen, and will keep doing so",Global life expectancy,Positive
+6,Year (1900 to 2010),1955,Global sea level change from 1900 (mm) (0 to 175),87.5,Rise in sea levels over the last century,Sea levels over the last century,Positive
+7,Year (1950 to 2100),2025,Population in billions (2.5 to 11.2),6.85,Global population is set to reach 11 billion by 2100,Population change in the future,Positive
+8,Years (1880 to 2020),1950,Temperature Anomaly (Degrees Centigrade) (0 to 0.8),0.4,It is getting hotter in the Northern Hemisphere each year,Northern Hemisphere yearly temperatures,Positive
+9,Years (2007 to 2019),2013,% of NHS budget spent on private providers (3% to 8%),5.5,The NHS is becoming more private,Percentage of NHS budget spent on private providers,Positive
+10,Years (1980 to 2018),1999,Household disposable income per head per year (2250 to 4500),3375,"Disposable income has continualy increased, making life easier for us",Real disposable income per head,Positive
+11,Year (2010 to 2017),2013.5,"Number of homeless individuals (1,900 to 5,000)",3450,Homelessness has increased under a conservative government,Homelessness over 7 years,Positive
+12,Year (2014 to 2020),2017,Earnings percentage increase (%) (0% to 4%),2,Earnings have been increasing,Earnings over the years,Positive
+13,Year (2000 to 2018),2009,"Number of international students (210,000 to 460,000)",335000,There are more international students than ever at UK universities,International student admissions in the UK,Positive
+14,Year (2006 to 2018),2012,Prevalence of severe obesity  (%) (10% to 20%),15,Obesity is getting more severe in year 6 children,Prevalence of severe obesity in year 6 children,Positive
+15,Year (1993 to 2018),2005.5,Average BMI (kg/m^2) (22 to 28),25,Adults aged 65+ are more unhealthy than in 1993,The BMI of adults aged 65+ from 1993 to 2018,Positive
+16,Year (2003 to 2018),2010.5,Percentage of adults with high blood pressure (%) (20 to 32),26,More adults have controlled hypertension (high blood pressure) than in 2003,The percentage of adults with controlled hypertension (high blood pressure) from 2003 to 2018,Positive
+17,Years (2006 to 2014),2010,"Hospital adminssions due to sharp object assault (4,750 to 3,000)",3875,Decrease in hospital admissions due to knife crime,Total hospital admissions for knife assaults,Negative
+18,Years (2009 to 2018),2013.5,"Number of searches (1,400,000 to 3,000)",701500,How stop and searches have decreased,Total stop and searches per year,Negative 
+19,Years (2006 to 2011),2008.5,"Number of gun homocide deaths (14,000 to 11,000)",12500,Drop in the amount of deaths due to guns in the US,US gun deaths from 2006 to 2011,Negative
+20,Kilometers ran per week (0 to 7),3.5,Weight (kg) (82 to 88),85,How running reduces weight,The link between weight and exercise,Negative
+21,Average annual termperature (Degrees Centigrade) (-5 to 25),15,Average male heigh (cm) (160 to 180),170,People in colder countries are taller,How temperature could affect height,Negative
+22,Year (1990 to 2016),2003,Life expectancy (years) (60 to 50),55,Drop in life expectancy in Lesotho,Lesotho life expectancy,Negative
+23,Year (1990 to 2016),2003,"Number of beds (from 300,000 to 150,000)",225000,There are less beds available in the NHS each year,Number of beds available in the NHS,Negative
+24,Year (1993 to 2019) ,2006,"Number of cases (25,000 to 10,000)",17500,The number of reported Tuberculosis (TB) cases in the US has dropped,Reported Tuberculosis (TB) cases in the US,Negative
+25,Number of miles north of London,128,Age of trains in years (5 to 40),22.5,Trains are much older the further north of England you go,Train age across south to north England,Negative
+26,Year (1900 to 2015),1957.5,"Cheetah population (150,000 to 0)",75000,Dramatic drop in world population of Cheetah,Cheetah population over the years,Negative
+27,Year (1995 to 2015),2005,"Area of deforestation (square km) (30,000 to 5,000)",17500,Brazil deforestation is slowing down,Brazil deforestation rates,Negative
+28,Year (2010 to 2020),2005,% of UK unemployed (9% to 5%),7,Dramatic decrease in unemployment,Levels of unemployment ,Negative
+29,Annual growth (%) (0 to 30%),15,Percentage of the country homeless (0% to 5%),2.5,"The richer a country is, the less homeless there are",Interaction between GDP and homelessness of a country ,Negative
+30,"Disposable income in household (£) (0 to £5,000)",2500,Obesity prevalence (%) (40% to 10%),25,People who are more deprived are more obese ,Obesity prevalence by disposable income in households,Negative
+31,Year (1998 to 2018) ,2008,Percentage of adults who drink (%) (40% to 10%),25,Adults are drinking less often than 20 years ago,Adults who have drunk alcohol in the last 7 days over the past 20 years,Negative
+32,Year (2011 to 2018),2014.5,Smoking prevalence (%) (19.8% to 14.4%),17.1,Adults are smoking less cigarettes per day than in 1993,Average (median) number of cigarettes smoked per day by adults,Negative
