@@ -6,12 +6,13 @@ create_mult_df <- function(my_df){
   
   mean1 <- my_df$mean_x
   mean2 <- my_df$mean_y
-  sd1 <- mean1 * .05
-  sd2 <- mean2 * .05
+  sd1 <- my_df$sd_x
+  sd2 <- my_df$sd_y
+  rel <- my_df$relationship
   
   mu <- c(mean1, mean2) 
   
-  myr <- .8 * sqrt(sd1) * sqrt(sd2)
+  myr <- rel * sqrt(sd1) * sqrt(sd2)
   
   mysigma <- matrix(c(sd1, myr, myr, sd2), 2, 2) 
   
@@ -73,4 +74,3 @@ for(index in my_graphs$graph_id) {
     save_graph()
   
 }
-
