@@ -42,7 +42,7 @@ save_neutral_graph <- function(current_graph){
 }  
 
 save_slant_graph <- function(current_graph){
-  ggsave(paste0("graphs/graph_neg_slant_", index, ".jpg"), current_graph, width = 5, height = 5.6, units = "in")
+  ggsave(paste0("graphs/graph_slant_", index, ".jpg"), current_graph, width = 5, height = 5.6, units = "in")
 }  
 
 # this reads in the .csv file that contains the parameters of the graphs to be
