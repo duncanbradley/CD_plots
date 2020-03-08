@@ -1,30 +1,21 @@
 library(tidyverse)
-library(MASS)
 
-create_mult_df <- function(my_df){
-  set.seed(1234+index)
+# the following function takes the parameters of a dataset and uses them to 
+# build a dataframe. 
+create_df <- function(my_df){
+  set.seed(1234)
+  y <- c(my_df$y_value1, my_df$y_value2, my_df$y_value3)
+  x <- c(my_df$x_category1, my_df$x_category2, my_df$x_category3)
+  df <- as_tibble(cbind(y, x)) %>%
+    mutate(y = as.double(y)) %>%
+    mutate(x = as.factor(x)) 
   
-  mean1 <- my_df$mean_x
-  mean2 <- my_df$mean_y
-  sd1 <- my_df$sd_x
-  sd2 <- my_df$sd_y
-  rel <- my_df$relationship
-  
-  mu <- c(mean1, mean2) 
-  
-  myr <- rel * sqrt(sd1) * sqrt(sd2)
-  
-  mysigma <- matrix(c(sd1, myr, myr, sd2), 2, 2) 
-  
-  my_data <- NULL
-  sample_size <- 50
-  
-  my_data <- data.frame(mvrnorm(sample_size, mu, mysigma, empirical = TRUE))
-  
-  colnames(my_data) <- c(my_df$'x-label', my_df$'y-label')
-  
-  return(my_data)
 }
+
+#ggplot(aes(y = y,
+#           x = x),
+#       data = df) +
+#  geom_col()
 
 # creating a wrapper function to wrap the title text
 wrapper <- function(x, ...) 
@@ -32,45 +23,49 @@ wrapper <- function(x, ...)
   paste(strwrap(x, ...), collapse = "\n")
 }
 
-
-my_scatter_graph <- function(df, labx, laby, title) {
-  set.seed(1234+index)
-  colnames(df) <- c("x", "y")
+my_bar_graph <- function(df, labx, laby, title) {
+  set.seed(1234)
   df %>%
     ggplot(aes(x = x, y = y)) +
-    geom_point() +
-    labs(x = labx, y = laby) +
+    geom_col(position = "dodge2") +
+    labs(x = labx, y = laby, title = title) +
     theme(text = element_text(size = 18),
-          panel.grid = element_blank(),
-          panel.background = element_rect(fill = "white"),
-          panel.border = element_rect(colour = "black", fill = NA)) +
-    ggtitle(wrapper(title, width = 43))
-
+          panel.grid = element_blank()) +
+    expand_limits(y = 0) +
+    ggtitle(wrapper(title, width = 30)) +
+    theme(panel.background = element_rect(fill = "white"),
+          plot.title = element_text(colour = "white"))
 }
 
-save_graph <- function(current_graph){
-  ggsave(paste0("graphs/graph_", index, ".jpg"), current_graph)
-  
+save_neutral_graph <- function(current_graph){
+  ggsave(paste0("graphs/graph_neutral_", index, ".jpg"), current_graph, width = 5, height = 5.6, units = "in")
 }  
 
+save_slant_graph <- function(current_graph){
+  ggsave(paste0("graphs/graph_neg_slant_", index, ".jpg"), current_graph, width = 5, height = 5.6, units = "in")
+}  
 
-# MAIN CODE ####
 # this reads in the .csv file that contains the parameters of the graphs to be
 # generated
 my_graphs <- read_csv("graphs_book.csv")
 
-# this loops through the my_graphs which contains the paramters of the 
-# graphs to be generated.  It runs once per each unique graph_id 
+# build bar graphs
 for(index in my_graphs$graph_id) {
   
   build_this_one <- my_graphs %>%
     filter(graph_id == index) %>%
-    create_mult_df() 
+    create_df() 
   
-  my_scatter_graph(build_this_one, 
-                   my_graphs[my_graphs$graph_id == index,]$'x_label', 
-                   my_graphs[my_graphs$graph_id == index,]$'y_label', 
-                   my_graphs[my_graphs$graph_id == index,]$title_slant) %>%
-    save_graph()
+  my_bar_graph(build_this_one, 
+               my_graphs[my_graphs$graph_id == index,]$x_label, 
+               my_graphs[my_graphs$graph_id == index,]$y_label, 
+               my_graphs[my_graphs$graph_id == index,]$title_neutral) %>%
+    save_neutral_graph()
   
+  my_bar_graph(build_this_one, 
+               my_graphs[my_graphs$graph_id == index,]$x_label, 
+               my_graphs[my_graphs$graph_id == index,]$y_label, 
+               my_graphs[my_graphs$graph_id == index,]$title_slant) %>%
+    save_slant_graph()
 }
+
